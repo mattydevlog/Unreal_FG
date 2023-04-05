@@ -4,10 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "IInteractable.h"
 #include "Door.generated.h"
 
+
 UCLASS()
-class UNREAL_ASSIGNMENT1_API ADoor : public AActor
+class UNREAL_ASSIGNMENT1_API ADoor : public AActor, public IIInteractable
 {
 	GENERATED_BODY()
 	
@@ -21,16 +23,7 @@ protected:
 	
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	virtual void Interact() override;
 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float pitchValue;
-	
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float yawValue;
-	
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float rollValue;
-
+	virtual void EnterOverlap();
 };

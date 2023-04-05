@@ -6,12 +6,10 @@
 // Sets default values
 ADoor::ADoor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	pitchValue = 0.f;
-	yawValue = 0.f;
-	rollValue = 0.f;
+
 
 }
 
@@ -19,17 +17,19 @@ ADoor::ADoor()
 void ADoor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+
 }
 
-// Called every frame
-void ADoor::Tick(float DeltaTime)
+void ADoor::Interact()
 {
-	Super::Tick(DeltaTime);
-
-	FQuat QuatRotation = FQuat(FRotator(pitchValue, yawValue, rollValue));
-
-	AddActorLocalRotation(QuatRotation, false, 0, ETeleportType::None);
+	UE_LOG(LogTemp, Warning, TEXT("Interacting with door"));
 
 }
+
+void ADoor::EnterOverlap()
+{
+
+}
+
 
