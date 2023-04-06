@@ -7,7 +7,7 @@
 ADoor::ADoor()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 
 
@@ -16,20 +16,9 @@ ADoor::ADoor()
 // Called when the game starts or when spawned
 void ADoor::BeginPlay()
 {
-	Super::BeginPlay();
-
-
 }
 
 void ADoor::Interact()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Interacting with door"));
-
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Door works"));
 }
-
-void ADoor::EnterOverlap()
-{
-
-}
-
-

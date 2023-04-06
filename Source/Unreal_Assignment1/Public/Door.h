@@ -8,6 +8,7 @@
 #include "Door.generated.h"
 
 
+
 UCLASS()
 class UNREAL_ASSIGNMENT1_API ADoor : public AActor, public IIInteractable
 {
@@ -23,7 +24,7 @@ protected:
 	
 
 public:	
-	virtual void Interact() override;
+	UFUNCTION(BlueprintCallable)
+		 virtual void Interact();
 
-	virtual void EnterOverlap();
 };
