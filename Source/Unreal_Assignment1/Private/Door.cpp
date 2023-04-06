@@ -20,5 +20,5 @@ void ADoor::BeginPlay()
 
 void ADoor::Interact()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Door works"));
+	bcanInteract = true;
 }

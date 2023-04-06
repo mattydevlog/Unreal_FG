@@ -27,4 +27,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 		 virtual void Interact();
 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+		bool bcanInteract = false;
+
 };
